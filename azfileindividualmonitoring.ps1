@@ -42,7 +42,7 @@ foreach($line in $allStorageAccounts) {
        $thresholdReached = $fsSummary | Where-Object { ($_.'Used Capacity %') -gt $thresholdAlert }
 	 
 	if($thresholdReached){
-		Write-Host "Red:" $fsSummary.StorageAcctName, $$fsSummary.ShareName
+		Write-Host "Red:" $fsSummary.StorageAcctName, $fsSummary.ShareName
 		$fsSummary
 	}else{
 		Write-Host "Green:" $fsSummary.StorageAcctName, $fsSummary.ShareName
